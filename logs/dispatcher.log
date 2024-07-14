@@ -1,0 +1,68 @@
+2024-07-13 19:00:51 DEBUG TelegramBot:21 - -=-=-=-| Bot bean created
+2024-07-13 19:01:12 DEBUG TelegramBot:21 - -=-=-=-| Bot bean created
+2024-07-13 19:02:02 DEBUG TelegramBot:27 - -=-=-=-| New message: Message(messageId=16, from=User(id=1196376478, firstName=Влд, isBot=false, lastName=null, userName=vlad0O_O0, languageCode=en, canJoinGroups=null, canReadAllGroupMessages=null, supportInlineQueries=null), date=1720864922, chat=Chat(id=1196376478, type=private, title=null, firstName=Влд, lastName=null, userName=vlad0O_O0, allMembersAreAdministrators=null, photo=null, description=null, inviteLink=null, pinnedMessage=null, stickerSetName=null, canSetStickerSet=null, permissions=null, slowModeDelay=null, bio=null, linkedChatId=null, location=null), forwardFrom=null, forwardFromChat=null, forwardDate=null, text=hello, entities=null, captionEntities=null, audio=null, document=null, photo=null, sticker=null, video=null, contact=null, location=null, venue=null, animation=null, pinnedMessage=null, newChatMembers=[], leftChatMember=null, newChatTitle=null, newChatPhoto=null, deleteChatPhoto=null, groupchatCreated=null, replyToMessage=null, voice=null, caption=null, superGroupCreated=null, channelChatCreated=null, migrateToChatId=null, migrateFromChatId=null, editDate=null, game=null, forwardFromMessageId=null, invoice=null, successfulPayment=null, videoNote=null, authorSignature=null, forwardSignature=null, mediaGroupId=null, connectedWebsite=null, passportData=null, forwardSenderName=null, poll=null, replyMarkup=null, dice=null, viaBot=null, senderChat=null, proximityAlertTriggered=null)
+2024-07-13 19:12:55 DEBUG TelegramBot:23 - -=-=-=-| Bot bean created
+2024-07-13 19:13:28 DEBUG TelegramBot:29 - -=-=-=-| New message: hi
+2024-07-13 19:13:28 ERROR TelegramBot:49 - org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Unable to deserialize response
+2024-07-13 19:13:31 DEBUG TelegramBot:29 - -=-=-=-| New message: er
+2024-07-13 19:13:31 ERROR TelegramBot:49 - org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Unable to deserialize response
+2024-07-13 19:13:33 DEBUG TelegramBot:29 - -=-=-=-| New message: loggg
+2024-07-13 19:13:34 ERROR TelegramBot:49 - org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Unable to deserialize response
+2024-07-13 19:13:38 DEBUG TelegramBot:29 - -=-=-=-| New message: fasfsaf
+2024-07-13 19:13:38 ERROR TelegramBot:49 - org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Unable to deserialize response
+2024-07-13 19:13:42 DEBUG TelegramBot:29 - -=-=-=-| New message: asdsafsafsad
+2024-07-13 19:13:43 ERROR TelegramBot:49 - org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Unable to deserialize response
+2024-07-13 20:17:41 DEBUG TelegramBot:34 - -=-=-=-| Bot bean created
+2024-07-13 20:19:16 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-13 20:20:12 DEBUG UpdateProducerImpl:13 - Привет
+2024-07-13 20:20:25 DEBUG UpdateProducerImpl:13 - 
+2024-07-13 23:32:41 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-13 23:44:38 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-13 23:44:52 DEBUG UpdateProducerImpl:21 - hello boi
+2024-07-14 14:00:41 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 14:01:46 DEBUG UpdateProducerImpl:21 - 
+2024-07-14 14:09:09 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 14:26:58 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 14:27:26 DEBUG UpdateProducerImpl:21 - Привет
+2024-07-14 14:27:34 DEBUG UpdateProducerImpl:21 - 
+2024-07-14 14:28:37 DEBUG UpdateProducerImpl:21 - Ладна
+2024-07-14 15:48:33 DEBUG UpdateProducerImpl:21 - Привет
+2024-07-14 19:00:45 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 19:14:29 DEBUG UpdateProducerImpl:21 - Привет
+2024-07-14 19:15:31 DEBUG UpdateProducerImpl:21 - Автобусь
+2024-07-14 19:17:15 DEBUG UpdateProducerImpl:21 - 
+2024-07-14 20:24:38 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 20:25:12 DEBUG UpdateProducerImpl:21 - Hi
+2024-07-14 20:26:56 DEBUG UpdateProducerImpl:21 - Ggg
+2024-07-14 22:00:53 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 22:02:27 DEBUG UpdateProducerImpl:21 - Hi
+2024-07-14 22:02:34 DEBUG UpdateProducerImpl:21 - Hi
+2024-07-14 22:02:36 DEBUG UpdateProducerImpl:21 - /help
+2024-07-14 22:02:38 DEBUG UpdateProducerImpl:21 - /help
+2024-07-14 22:02:45 DEBUG UpdateProducerImpl:21 - /start
+2024-07-14 22:02:51 DEBUG UpdateProducerImpl:21 - /START
+2024-07-14 22:02:56 DEBUG UpdateProducerImpl:21 - /cancel
+2024-07-14 22:19:41 DEBUG UpdateProducerImpl:21 - S
+2024-07-14 22:19:49 DEBUG UpdateProducerImpl:21 - /help
+2024-07-14 22:29:12 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 22:29:31 DEBUG UpdateProducerImpl:21 - Т
+2024-07-14 22:29:38 DEBUG UpdateProducerImpl:21 - /help
+2024-07-14 22:30:26 DEBUG UpdateProducerImpl:21 - /cancel
+2024-07-14 22:31:28 DEBUG UpdateProducerImpl:21 - G
+2024-07-14 22:32:23 DEBUG UpdateProducerImpl:21 - Ge
+2024-07-14 22:32:27 DEBUG UpdateProducerImpl:21 - /help
+2024-07-14 22:32:30 DEBUG UpdateProducerImpl:21 - /cancel
+2024-07-14 22:33:44 DEBUG UpdateProducerImpl:21 - /help
+2024-07-14 22:33:47 DEBUG UpdateProducerImpl:21 - /cancel
+2024-07-14 22:33:49 DEBUG UpdateProducerImpl:21 - /registration
+2024-07-14 22:33:55 DEBUG UpdateProducerImpl:21 - /start
+2024-07-14 22:33:59 DEBUG UpdateProducerImpl:21 - /help
+2024-07-14 22:34:56 DEBUG UpdateProducerImpl:21 - 
+2024-07-14 22:37:34 DEBUG UpdateProducerImpl:21 - 
+2024-07-14 23:35:23 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 23:36:36 DEBUG UpdateProducerImpl:21 - 
+2024-07-14 23:37:02 DEBUG UpdateProducerImpl:21 - 
+2024-07-14 23:58:21 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-14 23:58:45 DEBUG UpdateProducerImpl:21 - 
+2024-07-15 00:00:18 DEBUG TelegramBot:26 - -=-=-=-| Bot bean created
+2024-07-15 00:00:45 DEBUG UpdateProducerImpl:21 - 

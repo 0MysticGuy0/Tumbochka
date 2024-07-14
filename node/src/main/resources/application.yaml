@@ -1,0 +1,27 @@
+server:
+  port: 2000
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: vlat
+    password: 31415926Zdec
+  datasource:
+    url: jdbc:postgresql://localhost:5430/tumbochka
+    username: vlat
+    password: 31415926Zdec
+    driver-class-name:
+
+  jpa:
+    generate-ddl: true
+
+
+bot:
+  token: 7182070359:AAFMJbWIWfp_NgQcpWZjX_zWW0aMb2Lt28o
+
+service:
+  file_info:
+    uri: https://api.telegram.org/bot{token}/getFile?file_id={fileId}
+  file_storage:
+    uri: https://api.telegram.org/file/bot{token}/{filePath}
