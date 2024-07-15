@@ -1,0 +1,41 @@
+2024-07-15 18:12:44 DEBUG MailController:28 - test request
+2024-07-15 18:12:55 DEBUG MailController:28 - test request
+2024-07-15 18:13:16 DEBUG MailController:28 - test request
+2024-07-15 18:13:28 DEBUG MailController:28 - test request
+2024-07-15 18:13:42 DEBUG MailController:21 - Received request to send email to pecifit852@apn7.com
+2024-07-15 18:14:03 DEBUG MailController:21 - Received request to send email to pecifit852@apn7.com
+2024-07-15 18:14:18 DEBUG MailController:28 - test request
+2024-07-15 18:14:33 DEBUG MailController:21 - Received request to send email to pecifit852@apn7.com
+2024-07-15 18:15:35 DEBUG MailController:21 - Received request to send email to pecifit852@apn7.com
+2024-07-15 18:16:46 DEBUG MailController:28 - test request
+2024-07-15 18:16:53 DEBUG MailController:21 - Received request to send email to MailParams(id=asdas1, emailTo=pecifit852@apn7.com)
+2024-07-15 18:20:21 DEBUG MailController:21 - Received request to send email to MailParams(id=asdas1, emailTo=pecifit852@apn7.com)
+2024-07-15 18:20:21 DEBUG MailSenderServiceImpl:38 - Started sending email to pecifit852@apn7.com
+2024-07-15 18:20:21 DEBUG MailSenderServiceImpl:39 - info: vladislavbymain@mail.ru - Активация учетной записи для telegram-бота "Tumbochka" - Для завершения регистрации пройдите по ссылке:
+http://127.0.0.1:2005/mail/activation?id=asdas1
+2024-07-15 18:25:11 DEBUG MailController:21 - Received request to send email to MailParams(id=asdas1, emailTo=pecifit852@apn7.com)
+2024-07-15 18:25:11 DEBUG MailSenderServiceImpl:38 - Started sending email to pecifit852@apn7.com
+2024-07-15 18:25:11 DEBUG MailSenderServiceImpl:39 - info: bychkovskiyvlad05@gmail.com - Активация учетной записи для telegram-бота "Tumbochka" - Для завершения регистрации пройдите по ссылке:
+http://127.0.0.1:2005/mail/activation?id=asdas1
+2024-07-15 18:30:17 DEBUG MailController:21 - Received request to send email to MailParams(id=asdas1, emailTo=pecifit852@apn7.com)
+2024-07-15 18:30:17 DEBUG MailSenderServiceImpl:38 - Started sending email to pecifit852@apn7.com
+2024-07-15 18:30:17 DEBUG MailSenderServiceImpl:39 - info: bychkovskiyvlad05@gmail.com - Активация учетной записи для telegram-бота "Tumbochka" - Для завершения регистрации пройдите по ссылке:
+http://127.0.0.1:2005/mail/activation?id=asdas1
+2024-07-15 18:32:30 DEBUG MailController:21 - Received request to send email to MailParams(id=asdas1, emailTo=pecifit852@apn7.com)
+2024-07-15 18:32:30 DEBUG MailSenderServiceImpl:38 - Started sending email to pecifit852@apn7.com
+2024-07-15 18:32:30 DEBUG MailSenderServiceImpl:39 - info: bychkovskiyvlad05@gmail.com - Активация учетной записи для telegram-бота "Tumbochka" - Для завершения регистрации пройдите по ссылке:
+http://127.0.0.1:2005/mail/activation?id=asdas1
+2024-07-15 18:33:31 DEBUG MailController:21 - Received request to send email to MailParams(id=12345asd, emailTo=pecifit852@apn7.com)
+2024-07-15 18:33:31 DEBUG MailSenderServiceImpl:38 - Started sending email to pecifit852@apn7.com
+2024-07-15 18:33:31 DEBUG MailSenderServiceImpl:39 - info: bychkovskiyvlad05@gmail.com - Активация учетной записи для telegram-бота "Tumbochka" - Для завершения регистрации пройдите по ссылке:
+http://127.0.0.1:2005/mail/activation?id=12345asd
+2024-07-15 18:34:27 DEBUG MailController:21 - Received request to send email to MailParams(id=12345asd, emailTo=pecifit852@apn7.com)
+2024-07-15 18:34:27 DEBUG MailSenderServiceImpl:38 - Started sending email to pecifit852@apn7.com
+2024-07-15 18:34:27 DEBUG MailSenderServiceImpl:39 - info: bychkovskiyvlad05@gmail.com - Активация учетной записи для telegram-бота "Tumbochka" - Для завершения регистрации пройдите по ссылке:
+http://127.0.0.1:2005/mail/activation?id=12345asd
+2024-07-15 20:21:34 DEBUG MailController:21 - Received request to send email to vladislavbymain@mail
+2024-07-15 20:21:34 DEBUG MailSenderServiceImpl:38 - Started sending email to vladislavbymain@mail
+2024-07-15 20:22:51 DEBUG MailController:21 - Received request to send email to vladislavbymain@mail.ru
+2024-07-15 20:22:51 DEBUG MailSenderServiceImpl:38 - Started sending email to vladislavbymain@mail.ru
+2024-07-15 23:40:25 DEBUG MailController:21 - Received request to send email to pureshka13@gmail.com
+2024-07-15 23:40:25 DEBUG MailSenderServiceImpl:38 - Started sending email to pureshka13@gmail.com

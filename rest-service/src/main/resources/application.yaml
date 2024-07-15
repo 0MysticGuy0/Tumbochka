@@ -1,0 +1,14 @@
+server:
+  port: 2005
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5430/tumbochka
+    username: vlat
+    password: 31415926Zdec
+    driver-class-name:
+  jpa:
+    generate-ddl: true
+
+utils:
+  salt: PqLkjJsLS1KS7SmsS90jSNsmH0dc7SNDkS8nslNsEctO7G4zZa

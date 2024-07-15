@@ -8,6 +8,8 @@ import com.vlat.entity.AppPhoto;
 import com.vlat.entity.BinaryContent;
 import com.vlat.exceptions.UploadFileException;
 import com.vlat.service.FileService;
+import com.vlat.service.enums.LinkType;
+import com.vlat.utils.CryptoTool;
 import lombok.extern.log4j.Log4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,14 +35,18 @@ public class FileServiceImpl implements FileService {
     private String fileInfoUri;
     @Value("${service.file_storage.uri}")
     private String fileStorageUri;
+    @Value("${rest.address}")
+    private String restAddress;
     private final AppDocumentDAO appDocumentDAO;
     private final AppPhotoDAO appPhotoDAO;
     private final BinaryContentDAO binaryContentDAO;
+    private final CryptoTool cryptoTool;
 
-    public FileServiceImpl(AppDocumentDAO appDocumentDAO, AppPhotoDAO appPhotoDAO, BinaryContentDAO binaryContentDAO) {
+    public FileServiceImpl(AppDocumentDAO appDocumentDAO, AppPhotoDAO appPhotoDAO, BinaryContentDAO binaryContentDAO, CryptoTool cryptoTool) {
         this.appDocumentDAO = appDocumentDAO;
         this.appPhotoDAO = appPhotoDAO;
         this.binaryContentDAO = binaryContentDAO;
+        this.cryptoTool = cryptoTool;
     }
 
     @Override
@@ -59,8 +65,9 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public AppPhoto processPhoto(Message externalMessage) {
-        //TODO пока обработка только 1 фото
-        PhotoSize telegramPhoto = externalMessage.getPhoto().get(0);
+        var photoSizesCount = externalMessage.getPhoto().size();
+        var photoIndex = photoSizesCount > 1 ? externalMessage.getPhoto().size()-1 : 0;
+        PhotoSize telegramPhoto = externalMessage.getPhoto().get(photoIndex);
         String fileId = telegramPhoto.getFileId();
         ResponseEntity<String> response = getFilePath(fileId);
         if(response.getStatusCode() == HttpStatus.OK){
@@ -70,6 +77,15 @@ public class FileServiceImpl implements FileService {
         }else{
             throw  new UploadFileException("Bad responce from telegram service: " + response);
         }
+    }
+
+    @Override
+    public String generateLink(Long fileId, LinkType linkType) {
+        return "http://" +
+                restAddress + "/" +
+                linkType +
+                "?id=" +
+                cryptoTool.hashOf(fileId);
     }
 
     private BinaryContent getPersistentBinaryContent(ResponseEntity<String> response) {

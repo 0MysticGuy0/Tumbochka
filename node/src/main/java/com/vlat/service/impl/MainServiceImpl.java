@@ -8,12 +8,13 @@ import com.vlat.entity.AppUser;
 import com.vlat.entity.RawData;
 import com.vlat.entity.enums.UserState;
 import com.vlat.exceptions.UploadFileException;
+import com.vlat.service.AppUserService;
 import com.vlat.service.FileService;
 import com.vlat.service.MainService;
 import com.vlat.service.ProducerService;
+import com.vlat.service.enums.LinkType;
 import com.vlat.service.enums.ServiceCommands;
 import lombok.extern.log4j.Log4j;
-import lombok.var;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -26,16 +27,18 @@ import static com.vlat.service.enums.ServiceCommands.*;
 @Log4j
 public class MainServiceImpl implements MainService {
 
-    private RawDataDAO rawDataDAO;
-    private ProducerService producerService;
-    private AppUserDAO appUserDAO;
-    private FileService fileService;
+    private final RawDataDAO rawDataDAO;
+    private final ProducerService producerService;
+    private final AppUserDAO appUserDAO;
+    private final FileService fileService;
+    private final AppUserService appUserService;
 
-    public MainServiceImpl(RawDataDAO rawDataDAO, ProducerService producerService, AppUserDAO appUserDAO, FileService fileService) {
+    public MainServiceImpl(RawDataDAO rawDataDAO, ProducerService producerService, AppUserDAO appUserDAO, FileService fileService, AppUserService appUserService) {
         this.rawDataDAO = rawDataDAO;
         this.producerService = producerService;
         this.appUserDAO = appUserDAO;
         this.fileService = fileService;
+        this.appUserService = appUserService;
     }
 
     @Override
@@ -51,9 +54,9 @@ public class MainServiceImpl implements MainService {
         if(CANCEL.equals(serviceCommand)){
             output = cancelProcess(appUser);
         }else if(BASIC_STATE.equals(userState)){
-            output = processServiceCommand(appUser, text);
+            output = processServiceCommand(appUser, serviceCommand);
         }else if(WAIT_FOR_EMAIL_STATE.equals(userState)){
-            //TODO обработка email
+            output = appUserService.setEmail(appUser, text);
         }else{
             log.error("Unknown user state: " + userState);
             output = "Неизвестная ошибка! Введите /cancel и попробуйте снова!";
@@ -75,8 +78,8 @@ public class MainServiceImpl implements MainService {
 
         try{
             AppDocument doc = fileService.processDoc(message);
-            //TODO генерация ссылки
-            var answer = "Документ успешно загружен! Ссылка для скачивания: ***";
+            String link = fileService.generateLink(doc.getId(), LinkType.GET_DOC);
+            var answer = "Документ успешно загружен! Ссылка для скачивания: " + link;
             sendAnswer(chatId, answer);
         }catch (UploadFileException e){
             log.error(e);
@@ -97,9 +100,9 @@ public class MainServiceImpl implements MainService {
         }
 
         try{
-            AppPhoto doc = fileService.processPhoto(message);
-            //TODO генерация ссылки
-            var answer = "Фото успешно загружено! Ссылка для скачивания: ***";
+            AppPhoto photo = fileService.processPhoto(message);
+            String link = fileService.generateLink(photo.getId(), LinkType.GET_PHOTO);
+            var answer = "Фото успешно загружено! Ссылка для скачивания: " + link;
             sendAnswer(chatId, answer);
         }catch (UploadFileException e){
             log.error(e);
@@ -126,14 +129,13 @@ public class MainServiceImpl implements MainService {
         producerService.produceAnswer(sendMessage);
     }
 
-    private String processServiceCommand(AppUser appUser, String cmd) {
-        log.debug("Received command: "+cmd);
-        if(REGISTRATION.equals(cmd)){
-            //TODO добавить регистрацию
-            return "Временно недоступно!";
-        }else if(HELP.equals(cmd)){
+    private String processServiceCommand(AppUser appUser, ServiceCommands command) {
+        log.debug("Received command: "+command);
+        if(REGISTRATION.equals(command)){
+            return appUserService.registerUser(appUser);
+        }else if(HELP.equals(command)){
             return help();
-        }else if(START.equals(cmd)){
+        }else if(START.equals(command)){
             return "Приветствую! Посмотреть список доступных команд: /help";
         }else{
             return "Неизвестная команда! Посмотреть список доступных команд: /help";
@@ -161,19 +163,18 @@ public class MainServiceImpl implements MainService {
 
     private AppUser findOrSaveAppUser(Update update){
         var telegramUser = update.getMessage().getFrom();
-        AppUser persistentAppUser = appUserDAO.findAppUserByTelegramId(telegramUser.getId());
-        if(persistentAppUser == null){
+        var optionalUser = appUserDAO.findByTelegramId(telegramUser.getId());
+        if(optionalUser.isEmpty()){
             AppUser trasientAppUser = AppUser.builder()
                     .telegramId(telegramUser.getId())
                     .firstname(telegramUser.getFirstName())
                     .lastname(telegramUser.getLastName())
                     .username(telegramUser.getUserName())
-                    //TODO изсенить после добавления регистрации
-                    .isActive(true)
+                    .isActive(false)
                     .state(BASIC_STATE)
                     .build();
             return appUserDAO.save(trasientAppUser);
         }
-        return persistentAppUser;
+        return optionalUser.get();
     }
 }
